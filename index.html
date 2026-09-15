@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWIN BURN ($TWIN)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #050505; color: #fff; }
+        .neon-text { text-shadow: 0 0 10px rgba(255,100,50,0.8), 0 0 20px rgba(255,100,50,0.8); }
+        .neon-box { box-shadow: 0 0 15px rgba(255,100,50,0.3); border: 1px solid rgba(255,100,50,0.5); }
+        .btn-glow:hover:not(:disabled) { box-shadow: 0 0 25px rgba(255,150,50,0.6); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="max-w-2xl w-full text-center space-y-8">
+        <!-- Header -->
+        <div>
+            <h1 class="text-6xl font-bold neon-text mb-2">TWIN BURN</h1>
+            <p class="text-xl text-gray-400">The Dual Flywheel: Holder Rewards + Perpetual Burn</p>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Holder Rewards Card -->
+            <div class="neon-box bg-gray-900 rounded-xl p-6">
+                <h2 class="text-2xl font-bold text-orange-400 mb-2">Holder Rewards</h2>
+                <p class="text-sm text-gray-400 mb-4">30% of all Pump.fun fees are automatically distributed to $TWIN holders (min $20 balance) multiple times an hour.</p>
+                <div class="text-4xl font-bold" id="holder-yield">-- SOL</div>
+                <div class="text-xs text-gray-500 mt-1">Est. Next Platform Payout</div>
+            </div>
+
+            <!-- Burn Vault Card -->
+            <div class="neon-box bg-gray-900 rounded-xl p-6">
+                <h2 class="text-2xl font-bold text-red-500 mb-2">Burn Vault</h2>
+                <p class="text-sm text-gray-400 mb-4">50% of fees fill the Vault. Anyone can crank the fire to buy and permanently burn $TWIN.</p>
+                <div class="text-4xl font-bold" id="vault-balance">-- SOL</div>
+                <div class="text-xs text-gray-500 mt-1">Ready to Buy & Burn</div>
+            </div>
+        </div>
+
+        <!-- Action Area -->
+        <div class="neon-box bg-gray-900 rounded-xl p-8 mt-8">
+            <div id="wallet-section" class="mb-6">
+                <button id="connect-btn" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-full border border-gray-600 hover:bg-gray-700 transition">
+                    Connect Wallet
+                </button>
+                <div id="wallet-address" class="hidden text-orange-400 font-bold mt-2"></div>
+            </div>
+
+            <div class="space-y-4">
+                <button id="crank-btn" disabled class="btn-glow w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold text-2xl py-4 px-8 rounded-xl opacity-50 cursor-not-allowed transition duration-300">
+                    🔥 STOKE THE FIRE (CRANK)
+                </button>
+                <p class="text-sm text-gray-400">Executes CPI to Pump.fun to buy $TWIN with Vault funds and sends it to the Incinerator.</p>
+            </div>
+            
+            <div id="status-msg" class="text-sm text-red-400 mt-4 h-6"></div>
+        </div>
+        
+        <div class="text-xs text-gray-600">
+            Built on Solana. Immutable Fee Split. No Custom Program Risk.
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
