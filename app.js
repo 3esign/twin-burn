@@ -80,6 +80,12 @@ async function fetchOnChainData() {
             if (data.result && data.result.value) {
                 const lamports = data.result.value.lamports;
                 vaultBalanceDiv.textContent = (lamports / 1e9).toFixed(3) + ' SOL';
+                // Mock holder yield based on vault for now
+                holderYieldDiv.textContent = ((lamports / 1e9) * 0.6).toFixed(3) + ' SOL';
+            } else {
+                // PDA doesn't exist yet (0 balance)
+                vaultBalanceDiv.textContent = '0.000 SOL';
+                holderYieldDiv.textContent = '0.000 SOL';
             }
         } else {
             // Mock data for demo
