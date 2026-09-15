@@ -1,8 +1,8 @@
 const RPC_ENDPOINT = 'https://solana-rpc.publicnode.com'; // SL-174: publicnode allows CORS and raw getAccountInfo
 
-// Constants to be filled after launch
-const TOKEN_MINT = 'TBD_TWIN_BURN_MINT_ADDRESS';
-const VAULT_PDA = 'TBD_OUROBOROS_VAULT_PDA';
+// Constants updated post-launch
+const TOKEN_MINT = 'f44s44vzXxuzmT3P1pXLv6ErEhMjkLxyhYorYzj1GJs';
+const VAULT_PDA = 'BkQWLJzzhngFqMA4DfJuXiNzfv6hSyVmt8mwfXSLQRE7';
 
 const connectBtn = document.getElementById('connect-btn');
 const crankBtn = document.getElementById('crank-btn');
